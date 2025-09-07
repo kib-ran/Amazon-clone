@@ -1,0 +1,217 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #131921;
+  color: white;
+  padding: 10px 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Hover Box Effect for All Nav Items */
+.hoverBox {
+  padding: 4px 6px;
+  border-radius: 3px;
+  transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
+}
+
+.hoverBox:hover {
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.1);
+
+}
+
+/* Left Section */
+.left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo img {
+  width: 100px;
+  object-fit: contain;
+}
+
+.delivery {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.delivery p {
+  margin: 0;
+  font-size: 12px;
+  color: #ccc;
+}
+
+.delivery span {
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+}
+
+/* Search Bar */
+.search {
+  display: flex;
+  flex: 2;
+  min-width: 0;
+  margin: 0 20px;
+  background-color: white;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 2px solid transparent;
+}
+
+.search:focus-within {
+  border: 2px solid #f08804;
+}
+
+.search select {
+  padding: 8px;
+  border: none;
+  background-color: #f3f3f3;
+  font-size: 14px;
+}
+
+.search input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.searchIcon {
+  padding: 8px;
+  background-color: #febd69;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.searchIcon:hover {
+  background-color: #d49644;
+}
+
+/* Right Section */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex-shrink: 0;
+}
+
+.language {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.language img {
+  width: 20px;
+  height: 14px;
+}
+
+.language select {
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 14px;
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 12px;
+  cursor: pointer;
+  position: relative;
+}
+
+.account span {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.accountArrow {
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: white;
+}
+
+.orders {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.orders span {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.cart svg {
+  font-size: 22px;
+  color: #febd69;
+}
+
+.cart span {
+  font-size: 14px;
+  font-weight: bold;
+}
+/* Existing styles above... */
+
+@media screen and (max-width: 576px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .search {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .language {
+    display: none;
+  }
+
+  .accountArrow {
+    position: static;
+    transform: none;
+    margin-left: 5px;
+  }
+}
