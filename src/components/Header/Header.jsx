@@ -47,7 +47,7 @@ function Header() {
         </div>
 
         <div className={`${styles.account} ${styles.hoverBox}`}>
-          <p>Hello, Kibran</p>
+          <p>Hello,</p>
           <span>Account & Lists</span>
           <AiOutlineDown className={styles.accountArrow} />
         </div>

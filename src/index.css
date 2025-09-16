@@ -1,0 +1,14 @@
+/* Global Reset and Font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* CSS Variables */
+:root {
+  --primary-color: #febd69;
+  --primary-shade: #d49644;
+ 
+}
