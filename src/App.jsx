@@ -1,28 +1,11 @@
-import { useState } from "react";
-
-import "./App.css";
-import Header from "./components/Header/Header";
-import LowerHeader from "./components/Header/LowerHeader";
-import Carousel from "./components/Carousel/Carousel";
-
-import Category from "./components/Category/Category"
-import Product from "./components/Product/Product";
-
-
+import React from "react";
+import Routing from "./Router";
+import { DataProvider } from "./context/DataProvider"; 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div>
-        <Header />
-
-        <LowerHeader />
-        <Carousel />
-    {/* <Category/> */}
-   <Product/>
-      </div>
-    </>
+    <DataProvider>
+      <Routing />
+    </DataProvider>
   );
 }
 

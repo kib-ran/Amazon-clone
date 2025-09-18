@@ -1,16 +1,14 @@
-import React from "react";
-import "./Category.css";
+import { Link } from "react-router-dom";
+import styles from "./Category.module.css";
 
-function CategoryCard({ data }) {
+export default function CategoryCard({ name, label, image }) {
   return (
-    <div className="category-card">
-      <a href="#">
-        <h2>{data.title}</h2>
-        <img src={data.imgLink} alt={data.title} />
-        <p>shop now</p>
-      </a>
-    </div>
+    <Link to={`/category/${name}`} className={styles.card}>
+      <img src={image} alt={label} className={styles.image} />
+      <div className={styles.text}>
+        <h3>{label}</h3>
+        <span>Shop now</span>
+      </div>
+    </Link>
   );
 }
-
-export default CategoryCard;

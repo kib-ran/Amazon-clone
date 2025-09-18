@@ -1,69 +1,90 @@
-import React from "react";
 import styles from "./Header.module.css";
-import { SlLocationPin } from "react-icons/sl";
-import { BiSearch } from "react-icons/bi";
-import { AiOutlineDown } from "react-icons/ai";
-import { BsCart3 } from "react-icons/bs";
+import { BiLocationPlus, BiSearch } from "react-icons/bi";
+import { BsCart } from "react-icons/bs";
+import { FaCaretDown } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { useCart } from "../../Context/CartContext"; 
+export default function Header() {
+  const { state } = useCart(); 
+  const cartCount = state.basket.length;
 
-function Header() {
   return (
-    <header className={styles.header}>
-      {/* Left: Logo + Delivery */}
-      <div className={styles.left}>
-        <a href="/" className={`${styles.logo} ${styles.hoverBox}`}>
+    <section className={styles.headerWrapper}>
+      <div className={styles.topNav}>
+        {/* Logo */}
+        <Link to="/" className={styles.logo}>
           <img
             src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
             alt="Amazon Logo"
           />
-        </a>
-        <div className={`${styles.delivery} ${styles.hoverBox}`}>
-          <SlLocationPin className={styles.icon} />
-          <div>
-            <p>Deliver to</p>
-            <span>Ethiopia</span>
+        </Link>
+
+        {/* Location */}
+        <div className={styles.navItem}>
+          <BiLocationPlus className={styles.icon} />
+          <div className={styles.textBlock}>
+            <span className={styles.subText}>Deliver to</span>
+            <p className={styles.mainText}>Ethiopia</p>
           </div>
         </div>
-      </div>
 
-      {/* Center: Search Bar */}
-      <div className={styles.search}>
-        <select>
-          <option value="all">All</option>
-        </select>
-        <input type="text" placeholder="Search Amazon" />
-        <BiSearch className={styles.searchIcon} />
-      </div>
-
-      {/* Right: Language + Account + Orders + Cart */}
-      <div className={styles.right}>
-        <div className={`${styles.language} ${styles.hoverBox}`}>
-          <img
-            src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
-            alt="US Flag"
-          />
-          <select>
-            <option value="en">EN</option>
+        {/* Search */}
+        <div className={styles.search}>
+          <select className={styles.select}>
+            <option>All</option>
+            <option>Books</option>
           </select>
+          <input
+            type="text"
+            placeholder="Search Amazon"
+            className={styles.input}
+          />
+          <button className={styles.searchButton}>
+            <BiSearch />
+          </button>
         </div>
 
-        <div className={`${styles.account} ${styles.hoverBox}`}>
-          <p>Hello,</p>
-          <span>Account & Lists</span>
-          <AiOutlineDown className={styles.accountArrow} />
+        {/* Language */}
+        <div className={styles.navItem}>
+          <img
+            src="https://flagcdn.com/w40/us.png"
+            alt="USA Flag"
+            className={styles.flag}
+          />
+          <span className={styles.languageText}>EN</span>
+          <FaCaretDown className={styles.dropdownIcon} />
         </div>
 
-        <div className={`${styles.orders} ${styles.hoverBox}`}>
-          <span>Returns</span>
-          <p>& Orders</p>
-        </div>
+        {/* Account */}
+        <Link to="/account" className={styles.navItem}>
+          <div className={styles.textBlock}>
+            <span className={styles.subText}>Hello, Sign in</span>
+            <div className={styles.inlineRow}>
+              <p className={styles.mainText}>Account & Lists</p>
+              <FaCaretDown className={styles.dropdownIcon} />
+            </div>
+          </div>
+        </Link>
 
-        <div className={`${styles.cart} ${styles.hoverBox}`}>
-          <BsCart3 />
-          <span>Cart (0)</span>
-        </div>
+        {/* Orders */}
+        <Link to="/orders" className={styles.navItem}>
+          <div className={styles.textBlock}>
+            <span className={styles.subText}>Returns</span>
+            <p className={styles.mainText}>& Orders</p>
+          </div>
+        </Link>
+
+        {/* Cart */}
+        <Link to="/cart" className={styles.navItem}>
+          <div className={styles.cartWrapper}>
+            <div className={styles.cartIcon}>
+              <BsCart />
+              <span className={styles.cartCount}>{cartCount}</span>
+            </div>
+            <p className={styles.mainText}>Cart</p>
+          </div>
+        </Link>
       </div>
-    </header>
+    </section>
   );
 }
-
-export default Header;

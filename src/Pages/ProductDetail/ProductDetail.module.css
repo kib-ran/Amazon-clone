@@ -1,0 +1,73 @@
+.container {
+  padding: 40px;
+}
+
+.back {
+  text-decoration: none;
+  color: #007185;
+  font-weight: 500;
+  margin-bottom: 24px;
+  display: inline-block;
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 24px;
+  background-color: #fff;
+}
+
+.image {
+  flex: 1 1 300px;
+  max-width: 400px;
+  height: auto;
+  object-fit: contain;
+}
+
+.info {
+  flex: 2 1 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.description {
+  font-size: 1rem;
+  color: #333;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #B12704;
+}
+
+.rating {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.addToCart {
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-shade);
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.addToCart:hover {
+  background-color: var(--primary-shade);
+}

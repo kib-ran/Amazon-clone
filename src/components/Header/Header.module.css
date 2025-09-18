@@ -1,217 +1,138 @@
-*{
-    padding: 0;
-    margin: 0;
+.headerWrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #131921;
+  color: white;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-.header {
+
+.topNav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #131921;
-  color: white;
   padding: 10px 20px;
-  font-family: Arial, sans-serif;
-}
-
-/* Hover Box Effect for All Nav Items */
-.hoverBox {
-  padding: 4px 6px;
-  border-radius: 3px;
-  transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
-}
-
-.hoverBox:hover {
-  border: 1px solid white;
-  background-color: rgba(255, 255, 255, 0.1);
-
-}
-
-/* Left Section */
-.left {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .logo img {
   width: 100px;
-  object-fit: contain;
 }
 
-.delivery {
+.navItem {
   display: flex;
   align-items: center;
-  gap: 5px;
-  font-size: 13px;
-  cursor: pointer;
+  gap: 6px;
+  padding: 6px 12px;
+  text-decoration: none;
+  color: white;
+  border: 1px solid transparent;
+  transition: border 0.2s ease;
 }
 
-.delivery p {
+.navItem:hover {
+  border: 1px solid white;
+}
+
+.icon {
+  font-size: 20px;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.inlineRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.subText {
+  font-size: 12px;
+  font-weight: 400;
+  color: #ccc;
+}
+
+.mainText {
+  font-size: 14px;
+  font-weight: 500;
   margin: 0;
+}
+
+.flag {
+  width: 20px;
+  height: 14px;
+  object-fit: cover;
+}
+
+.languageText {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.dropdownIcon {
   font-size: 12px;
   color: #ccc;
 }
 
-.delivery span {
-  font-weight: bold;
-  font-size: 14px;
-  color: white;
-}
-
-/* Search Bar */
 .search {
   display: flex;
-  flex: 2;
-  min-width: 0;
+  flex: 1;
   margin: 0 20px;
   background-color: white;
   border-radius: 4px;
   overflow: hidden;
-  border: 2px solid transparent;
+  max-width: 700px;
 }
 
-.search:focus-within {
-  border: 2px solid #f08804;
-}
-
-.search select {
+.select {
   padding: 8px;
   border: none;
   background-color: #f3f3f3;
   font-size: 14px;
 }
 
-.search input {
+.input {
   flex: 1;
-  padding: 8px;
+  padding: 10px;
   border: none;
-  outline: none;
-  font-size: 14px;
+  font-size: 16px;
 }
 
-.searchIcon {
-  padding: 8px;
+.searchButton {
   background-color: #febd69;
-  color: #1a1a1a;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.searchIcon:hover {
-  background-color: #d49644;
-}
-
-/* Right Section */
-.right {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  flex-shrink: 0;
-}
-
-.language {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.language img {
-  width: 20px;
-  height: 14px;
-}
-
-.language select {
-  background: transparent;
-  color: white;
+  padding: 10px;
   border: none;
-  font-size: 14px;
+  cursor: pointer;
+  font-size: 20px;
 }
 
-.account {
+.cartWrapper {
   display: flex;
   align-items: center;
-  flex-direction: column;
-  font-size: 12px;
-  cursor: pointer;
+  gap: 6px;
   position: relative;
 }
 
-.account span {
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.accountArrow {
-  position: absolute;
-  right: -15px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 14px;
-  color: white;
-}
-
-.orders {
-  display: flex;
-  flex-direction: column;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-.orders span {
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.cart {
+.cartIcon {
+  position: relative;
+  font-size: 24px;
   display: flex;
   align-items: center;
-  gap: 5px;
-  cursor: pointer;
+  justify-content: center;
 }
 
-.cart svg {
-  font-size: 22px;
-  color: #febd69;
-}
-
-.cart span {
-  font-size: 14px;
+.cartCount {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #f08804;
+  color: black;
   font-weight: bold;
-}
-/* Existing styles above... */
-
-@media screen and (max-width: 576px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
-  }
-
-  .left {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    width: 100%;
-  }
-
-  .search {
-    width: 100%;
-    margin: 10px 0;
-  }
-
-  .right {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    width: 100%;
-  }
-
-  .language {
-    display: none;
-  }
-
-  .accountArrow {
-    position: static;
-    transform: none;
-    margin-left: 5px;
-  }
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
 }
