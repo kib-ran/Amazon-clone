@@ -1,0 +1,126 @@
+:root {
+  --primary-color: #febd69;
+  --primary-shade: #d49644;
+}
+
+.login {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding-top: 40px;
+}
+
+.logoContainer {
+  text-align: center;
+}
+
+.logo {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.formContainer {
+  width: 100%;
+  max-width: 350px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 24px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.inputGroup label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.inputGroup input {
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #a6a6a6;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.inputGroup input:focus {
+  border-color: var(--primary-shade);
+  outline: none;
+}
+
+.signInBtn,
+.createBtn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  border: 1px solid;
+}
+
+.signInBtn {
+  background-color: var(--primary-color);
+  border-color: var(--primary-shade);
+  margin-top: 12px;
+}
+
+.signInBtn:hover:not(:disabled) {
+  background-color: var(--primary-shade);
+}
+
+.createBtn {
+  background-color: #d6d8db;
+  border-color: #adb1b8;
+  color: black;
+  margin-top: 24px;
+}
+
+.createBtn:hover:not(:disabled) {
+  background-color: #c2c4c7;
+}
+
+.signInBtn:disabled,
+.createBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spinnerWrapper {
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error {
+  color: red;
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.disclaimer {
+  font-size: 0.75rem;
+  color: #555;
+  margin-top: 16px;
+  line-height: 1.4;
+}

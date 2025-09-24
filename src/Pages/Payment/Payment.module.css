@@ -1,0 +1,183 @@
+.paymentWrapper {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  /* background-color: #f8f9fa; */
+  min-height: 100vh;
+}
+
+.paymentContent {
+  width: 100%;
+  max-width: 800px;
+  /* background-color: white; */
+  border-radius: 8px;
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+  padding: 20px;
+}
+
+/* ✅ Checkout Header */
+.checkoutHeader {
+  background-color: #f3f3f3;
+  padding: 15px;
+  /* border-radius: 6px; */
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.checkoutHeader h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  /* color: #333; */
+}
+
+/* ✅ Section spacing */
+.section {
+  margin-bottom: 30px;
+}
+
+/* ✅ Bold section titles */
+.sectionTitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  /* color: #333; */
+}
+
+/* ✅ Delivery block centered */
+.addressBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.addressBlock p {
+  margin: 5px 0;
+  font-size: 16px;
+  /* color: #333; */
+}
+
+/* ✅ Remove background for email */
+.addressBlock p:first-child {
+  /* background-color: transparent; */
+  font-weight: 500;
+}
+
+/* ✅ Review items layout */
+.itemList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.itemCard {
+  display: flex;
+  padding: 15px;
+  
+  /* border-radius: 6px; */
+  /* border: 1px solid #eaeaea;
+  /* background-color: #fff;  */
+  align-items: center;
+}
+
+.itemImage {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-right: 15px;
+  /* border-radius: 4px; */
+}
+
+.itemInfo {
+  flex: 1;
+}
+
+.itemTitle {
+  font-weight: 500;
+  margin-bottom: 5px;
+  /* color: #333; */
+}
+
+.itemRating {
+  font-size: 14px;
+  /* color: #666; */
+  margin-bottom: 5px;
+}
+
+.itemPrice {
+  font-weight: 500;
+  color: #333;
+}
+
+/* ✅ Stripe card input */
+.cardElement {
+  padding: 12px;
+  /* border: 1px solid #eaeaea; */
+  border-radius: 6px;
+  margin-bottom: 15px;
+  background-color: #f8f9fa;
+}
+
+.cardError {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* ✅ Total and Pay Now stacked */
+.paymentFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.totalText {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.payButton {
+  background-color: #f0c14b;
+  color: #111;
+  border: 1px solid #a88734;
+  border-radius: 4px;
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+  width: 50%;
+  text-align: center;
+  outline: none;
+  box-shadow: none;
+}
+
+.payButton:hover {
+  background-color: #e4b547;
+  border-color: #a88734;
+  color: #111;
+}
+
+.payButton:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.payButton:disabled {
+  background-color: #e4b547;
+  opacity: 0.7;
+  /* cursor: not-allowed; */
+  border-color: #a88734;
+}
+
+.spinnerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+}

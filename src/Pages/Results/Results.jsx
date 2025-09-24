@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Loader from "../../components/Loader/Loader";
 import styles from "./Results.module.css";
-import { useCart } from "../../Context/CartContext"; 
+import { useCart } from "../../context/CartProvider";
 
 export default function Results() {
   const { categoryName } = useParams();

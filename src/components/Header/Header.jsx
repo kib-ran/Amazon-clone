@@ -1,12 +1,31 @@
+
 import styles from "./Header.module.css";
 import { BiLocationPlus, BiSearch } from "react-icons/bi";
 import { BsCart } from "react-icons/bs";
 import { FaCaretDown } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import { useCart } from "../../Context/CartContext"; 
+import { Link, useNavigate } from "react-router-dom";
+import { useCart } from "../../context/CartProvider";
+import { auth } from "../../Utility/firebase";
+
 export default function Header() {
-  const { state } = useCart(); 
-  const cartCount = state.basket.length;
+  const { basket, user, dispatch } = useCart();
+  const cartCount = basket?.length || 0;
+  const navigate = useNavigate();
+
+
+  const greeting = user
+    ? `Hello, ${user.email
+        .split("@")[0]
+        .replace(/\d.*$/, "")
+        .replace(/^./, (c) => c.toUpperCase())}`
+    : "Hello";
+
+  const handleSignOut = () => {
+    auth.signOut().then(() => {
+      dispatch({ type: "SET_USER", payload: null });
+      navigate("/auth");
+    });
+  };
 
   return (
     <section className={styles.headerWrapper}>
@@ -55,16 +74,22 @@ export default function Header() {
           <FaCaretDown className={styles.dropdownIcon} />
         </div>
 
-        {/* Account */}
-        <Link to="/account" className={styles.navItem}>
-          <div className={styles.textBlock}>
-            <span className={styles.subText}>Hello, Sign in</span>
+        {/* Account & Lists */}
+        <div
+          onClick={user ? handleSignOut : null}
+          className={styles.navItem}
+          style={{ cursor: user ? "pointer" : "default" }}
+        >
+          <Link to={!user ? "/auth" : "#"} className={styles.textBlock}>
+            <span className={styles.subText}>{greeting}</span>
             <div className={styles.inlineRow}>
-              <p className={styles.mainText}>Account & Lists</p>
+              <p className={styles.mainText}>
+                {user ? "Sign Out" : "Account & Lists"}
+              </p>
               <FaCaretDown className={styles.dropdownIcon} />
             </div>
-          </div>
-        </Link>
+          </Link>
+        </div>
 
         {/* Orders */}
         <Link to="/orders" className={styles.navItem}>
@@ -88,3 +113,13 @@ export default function Header() {
     </section>
   );
 }
+
+
+
+
+
+
+
+
+
+
