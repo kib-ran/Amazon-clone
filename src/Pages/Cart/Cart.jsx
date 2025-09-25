@@ -71,7 +71,7 @@
 // export default Cart;
 
 import React from "react";
-import { useCart } from "../../Context/CartProvider";
+import { useCart } from "../../context/CartProvider";
 import CurrencyFormat from "../../components/CurrencyFormat/CurrencyFormat";
 import { Link } from "react-router-dom";
 import styles from "./Cart.module.css";

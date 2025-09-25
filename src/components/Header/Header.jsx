@@ -3,7 +3,7 @@ import { BiLocationPlus, BiSearch } from "react-icons/bi";
 import { BsCart } from "react-icons/bs";
 import { FaCaretDown } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import { useCart } from "../../Context/CartProvider";
+import { useCart } from "../../context/CartProvider";
 import { auth } from "../../Utility/firebase";
 
 export default function Header() {

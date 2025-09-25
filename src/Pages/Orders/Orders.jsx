@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
-import Layout from "../../components/Layout/Layout";
+// import Layout from "../../components/Layout/Layout";
 import { db } from "../../Utility/firebase";
-import { CartContext } from "../../Context/CartProvider";
+import { CartContext } from "../../context/CartProvider";
 import classes from "./Orders.module.css";
 import { ClipLoader } from "react-spinners";
 

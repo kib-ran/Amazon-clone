@@ -6,7 +6,7 @@ import {
   createUserWithEmailAndPassword,
 } from "firebase/auth";
 import { FadeLoader } from "react-spinners";
-import { useCart } from "../../Context/CartProvider";
+import { useCart } from "../../context/CartProvider";
 import classes from "./Auth.module.css";
 
 function Auth() {

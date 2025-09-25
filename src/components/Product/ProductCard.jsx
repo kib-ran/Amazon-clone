@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useCart } from "../../Context/CartProvider";
+import { useCart } from "../../context/CartProvider";
 import { ADD_TO_BASKET } from "../../Utility/action-type";
 import styles from "./Product.module.css";
 
