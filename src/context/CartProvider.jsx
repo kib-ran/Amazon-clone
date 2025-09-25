@@ -1,5 +1,3 @@
-
-
 // import { createContext, useContext, useReducer } from "react";
 
 // const CartContext = createContext();
@@ -57,13 +55,8 @@
 //   return context;
 // };
 
-
-
-
-
 import { createContext, useContext, useReducer } from "react";
 
-// ✅ Export context directly for clarity
 export const CartContext = createContext();
 
 const initialState = {
@@ -122,7 +115,6 @@ function reducer(state, action) {
   }
 }
 
-// ✅ Provider component
 export function CartProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
@@ -132,7 +124,6 @@ export function CartProvider({ children }) {
   );
 }
 
-// ✅ Custom hook for consuming context
 export const useCart = () => {
   const context = useContext(CartContext);
   if (!context) {
