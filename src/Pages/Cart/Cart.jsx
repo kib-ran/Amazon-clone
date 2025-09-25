@@ -1,4 +1,3 @@
-
 // import React from "react";
 // import { useCart } from "../../context/CartProvider";
 // import CurrencyFormat from "../../components/CurrencyFormat/CurrencyFormat";
@@ -6,7 +5,7 @@
 // import styles from "./Cart.module.css";
 
 // function Cart() {
-//   const { basket } = useCart(); 
+//   const { basket } = useCart();
 //   const total = basket?.reduce((acc, item) => acc + item.price, 0) || 0;
 
 //   return (
@@ -71,17 +70,8 @@
 
 // export default Cart;
 
-
-
-
-
-
-
-
-
-
 import React from "react";
-import { useCart } from "../../context/CartProvider";
+import { useCart } from "../../Context/CartProvider";
 import CurrencyFormat from "../../components/CurrencyFormat/CurrencyFormat";
 import { Link } from "react-router-dom";
 import styles from "./Cart.module.css";

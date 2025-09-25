@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { CartContext } from "../../context/CartProvider";
+import { CartContext } from "../../Context/CartProvider";
 
 const ProtectedRoute = ({ children, msg, redirect }) => {
   const navigate = useNavigate();

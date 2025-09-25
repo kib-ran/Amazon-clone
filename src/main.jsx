@@ -1,7 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import Routing from "./Router.jsx"; 
-import { CartProvider } from "./context/CartProvider"; 
+import Routing from "./Router.jsx";
+import { CartProvider } from "./Context/CartProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
   <CartProvider>

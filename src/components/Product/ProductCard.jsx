@@ -1,12 +1,11 @@
 import React from "react";
 
-import { useCart } from "../../context/CartProvider";
+import { useCart } from "../../Context/CartProvider";
 import { ADD_TO_BASKET } from "../../Utility/action-type";
 import styles from "./Product.module.css";
 
 function ProductCard({ product }) {
   const { image, title, id, price, description, rating: ratingObj } = product;
-
 
   const rating =
     typeof ratingObj === "number" ? ratingObj : ratingObj?.rate || 0;
@@ -61,9 +60,3 @@ function ProductCard({ product }) {
 }
 
 export default ProductCard;
-
-
-
-
-
-

@@ -1,17 +1,15 @@
-
 import styles from "./Header.module.css";
 import { BiLocationPlus, BiSearch } from "react-icons/bi";
 import { BsCart } from "react-icons/bs";
 import { FaCaretDown } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import { useCart } from "../../context/CartProvider";
+import { useCart } from "../../Context/CartProvider";
 import { auth } from "../../Utility/firebase";
 
 export default function Header() {
   const { basket, user, dispatch } = useCart();
   const cartCount = basket?.length || 0;
   const navigate = useNavigate();
-
 
   const greeting = user
     ? `Hello, ${user.email
@@ -113,13 +111,3 @@ export default function Header() {
     </section>
   );
 }
-
-
-
-
-
-
-
-
-
-

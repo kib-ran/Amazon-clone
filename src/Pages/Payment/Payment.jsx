@@ -135,56 +135,14 @@
 
 // export default Payment;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import React, { useState } from "react";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../Api/axios";
 import styles from "./Payment.module.css";
-import { useCart } from "../../context/CartProvider";
+import { useCart } from "../../Context/CartProvider";
 import { ClipLoader } from "react-spinners";
-import{db} from "../../Utility/firebase"
+import { db } from "../../Utility/firebase";
 function Payment() {
   const { basket, user, dispatch } = useCart();
   const stripe = useStripe();
@@ -200,17 +158,6 @@ function Payment() {
   const handleChange = (e) => {
     setCardError(e.error?.message || "");
   };
-
-
-
-
-
-
-
-
-
-
-
 
   const handlePayment = async (e) => {
     e.preventDefault();
